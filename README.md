@@ -2,7 +2,7 @@
 
 > **Academic Project** | Python • Scikit-learn | Aug 2024 – Nov 2024
 
-A binary classification pipeline to predict customer churn using **Logistic Regression** and **Random Forest**, achieving **87% accuracy** with robust handling of class imbalance via **SMOTE**.
+A binary classification pipeline to predict customer churn using **Logistic Regression** and **Random Forest**, achieving **~90% accuracy** (Random Forest, ROC-AUC 0.944) with robust handling of class imbalance via **SMOTE**.
 
 ---
 
@@ -11,7 +11,8 @@ A binary classification pipeline to predict customer churn using **Logistic Regr
 | | |
 |---|---|
 | **Task** | Binary Classification (Churn / No Churn) |
-| **Best Accuracy** | 87% (Random Forest) |
+| **Best Accuracy** | 89.7% (Random Forest) |
+| **Best ROC-AUC** | 0.944 (Random Forest) |
 | **Imbalance Handling** | SMOTE (Synthetic Minority Oversampling) |
 | **Models** | Logistic Regression, Random Forest |
 | **Dataset** | Synthetic telecom churn dataset (~3,000 customers) |
@@ -57,8 +58,8 @@ Original dataset has ~22% churn rate. SMOTE synthetically oversamples the minori
 ### 3. Models
 | Model | Accuracy | Notes |
 |---|---|---|
-| Logistic Regression | ~83% | Baseline, interpretable coefficients |
-| Random Forest | ~87% | Best performer, used for feature importance |
+| Logistic Regression | 83.3% | Baseline, interpretable coefficients. ROC-AUC 0.885 |
+| Random Forest | 89.7% | Best performer, used for feature importance. ROC-AUC 0.944, churn-class recall 0.79 |
 
 ### 4. Visualisations
 - **Confusion Matrix** — per-class prediction breakdown
@@ -72,7 +73,7 @@ Original dataset has ~22% churn rate. SMOTE synthetically oversamples the minori
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/customer-churn-prediction.git
+git clone https://github.com/ProCoder96-c/customer-churn-prediction.git
 cd customer-churn-prediction
 
 # Install dependencies
@@ -89,7 +90,7 @@ Outputs (plots) will be saved to `outputs/plots/`.
 ## 📊 Sample Outputs
 
 ### ROC Curves
-Both models significantly outperform random classification. Random Forest achieves AUC > 0.90.
+Both models clearly outperform random classification: Random Forest AUC = 0.944, Logistic Regression AUC = 0.885.
 
 ### Feature Importance (Random Forest)
 Top churn drivers: `tenure_months`, `monthly_charges`, `support_calls`, `contract_type`, `avg_monthly_spend`
